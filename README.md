@@ -1,5 +1,11 @@
 # Travel_Blog
-This one page website is really my deepest dive yet into nuxt app/vue projects. My mentor developer set me up and this is what I have so far. It is a simple blog that starts with a banner and an email sign up form. Subsequent individual containers display the most recent short paragraphs and images from the Wood family travels. Simple graphics include a plane image that travels across the screen on mouseover (making use of css transitions).
+This one page website is really my deepest dive yet into nuxt app/vue projects. My mentor developer set me up and this is what I have so far. It is a simple blog that starts with a banner and an email sign up form. Subsequent individual containers display the most recent short paragraphs and images from the Wood family travels. Simple graphics include a plane image that travels across the screen on mouseover (making use of css transitions). 
+
+
+Credits to and contact:
+
+https://github.com/dwoodjazz
+https://twitter.com/dougwoodinCda
 
 
 
