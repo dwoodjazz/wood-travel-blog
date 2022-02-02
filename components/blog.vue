@@ -4,33 +4,33 @@
             <img src="../assets/images/planeSelfie.png" id="thumbnail"> 
             <h1 id="title">Gitup &amp; Go Travel Blog</h1>
             <h2 id="subtitle">"...may all your travels be with me"</h2>
-            <img src="../assets/images/airplaneDark.png" class =" plane topPlane" id="topPlane" title="hovering cartoon airplane">
+            <img src="../assets/images/airplaneDark.png" class ="plane topPlane" id="topPlane" title="hovering cartoon airplane">
         </div>
-
-        <v-row justify="end ma-4">
+<!--  -->
+        <v-row  >
             <v-menu
                 bottom
                 origin="center center"
                 transition="scale-transition"
             >
                 <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                    class="ml-100 pa-md-4 mx-lg-r"
-                    color="white green--text"
-                    dark
-                    v-bind="attrs"
-                    v-on="on"
-                >
-                    Jump down to our past adventures!
-                </v-btn>
-                
+                    <v-btn id="jumpBtn" 
+                        
+                        color="white green--text"
+                        font-size="5px"
+                        dark
+                        v-bind="attrs"
+                        v-on="on"
+                        >
+                        Jump down to our past adventures!
+                    </v-btn>
                 </template>
         
                 <v-list>
-                <v-list-item
+                    <v-list-item
                     v-for="(item, i) in items"
                     :key="i"
-                >
+                    >
                     <a :href="'#' + item.id">
                     <v-list-item-title  v-html="item.title">{{ item.title }}</v-list-item-title>
                     </a>
@@ -40,14 +40,74 @@
         </v-row>
 
         <aside class="signup">
-            <label for="inputs">want email updates?</label>
+            <label for="inputs" id="label">want email updates?</label>
             <input class="inputs" id="firstName" v-model="firstname" value="first name" onfocus="this.value=''" >
             <input class="inputs" id="lastName" v-model="lastname" value="last name" onfocus="this.value=''" >
-            <label for="email">email</label>
+            <label for="email" id="emailLabel">email</label>
             <input type="email" class="inputs" id="email" v-model="email" value="email" onfocus="this.value=''" required>
             <button class="inputs" id="send" value="send" v-on:click="SignUps">send</button>
         </aside>
 
+        <div class="blogEntry">
+            <div class="blogBox" id="jan2022box">
+                <h3 class="blogPlace" >Ambergris Caye, Belize</h3>
+                <h4 class="blogDate">Jan 15-23,2022</h4>
+                <div class="pContainer">
+                    <p id="de2021text"><strong>Our all-time #1 bucket-list destination came to be in celebration </strong>of our 32nd anniversary. We headed to the airport at 3am and enjoyed our business class six-hour flight to Belize City. All of the preparation and planning and covid testing paid off. It was beautiful and peaceful and the people were wonderful. We spent the week on the dock, in a golf cart, and walking the shores of San Pedro and beyond. We enjoyed our trip and did well without the creature comforts of our modern life.</p>
+                </div>
+            </div>
+            <div class="pictures success" id="Jan2022">
+                <v-carousel class="carousel">
+                    <v-carousel-item class="item">
+                        <img src="../assets/images/belize2022/legs.jpg" title="Kristin on the dock">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <video 
+                            class="accent" 
+                            autoplay 
+                            muted 
+                            controls>
+                        <source src="../assets/images/belize2022/cart-in-san-pedro (1).mp4" type="video/mp4" title="cart in San Pedro">
+                        </video>
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <img src="../assets/images/belize2022/secret-sunset.jpg" title="sunset at secret beach">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <img src="../assets/images/belize2022/Tranquility-Bay.jpg" title="the shore at Tranquility Bay">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <img src="../assets/images/belize2022/spike-tail-black-iguana.jpg" title="iguana">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <img src="../assets/images/belize2022/sunset-family.jpg" title="a family at sunset">
+                    </v-carousel-item>
+                    <v-carousel-item
+                        >
+                        <img src="../assets/images/belize2022/secret-beach.jpg" title="Secret Beach Sign">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <img src="../assets/images/belize2022/secret-sunset.jpg" title="Sunset at Secret Beach">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <img src="../assets/images/belize2022/sunset-couple.jpg" title="us at sunset">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <img src="../assets/images/belize2022/steps-to-breakfast.jpg" title="the path to breakfast">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <img src="../assets/images/belize2022/handstand.jpg" title="a handstand at sunset">
+                    </v-carousel-item>
+                    <v-carousel-item>
+                        <video class="accent" autoplay muted controls>
+                            <source src="../assets/images/belize2022/swaying-palms.mp4" type="video/mp4">
+                            <source src="movie.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
+                    </v-carousel-item>
+                </v-carousel>   
+             </div>
+        </div>
         <div class="blogEntry">
             <div class="blogBox" id="dec2021box">
                 <h3 class="blogPlace" >Hometown Coeur d'Alene</h3>
@@ -145,7 +205,7 @@
                 items: [
                     { 
                     title: '...Belize Jan 2022',
-                    id: "nov2021box" 
+                    id: "jan2021box" 
                     },
                     { 
                     title: '...San Diego March 2022 Spring Break',
@@ -185,15 +245,15 @@
 <!-- styling section -->
 <style scoped>
 
-
-
     @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Raleway:ital,wght@0,200;1,100&display=swap');
     * {
     display: flexbox;
     }
 
     .body{
+        /* display: flexbox; */
         height: auto;
+        width: 100%;
         background-color: black;
 
     }
@@ -202,7 +262,19 @@
         color:greenyellow;
         height: auto;
     }
-
+        #banner {
+        display: flexbox;
+        padding: 2rem;
+        margin: 0 0 60px 0; 
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+        background-color: rgb(49, 85, 85);
+        align-items: center;
+        /* border: solid red 10px; */
+    }
 
     h1 {
         font-size: 4rem;
@@ -231,9 +303,9 @@
     #topPlane{
         height: 180px;
         width: auto;
-        margin: 0 0 0 800px;
+        margin: 0 0 0 60%;
         z-index: 0;
-        transition: all linear 1.5s
+        transition: all linear 3.5s
     }
 
     #topPlane:hover {
@@ -251,17 +323,11 @@
         z-index: 2;
     }
 
-    #banner {
-        display: flexbox;
-        padding: 2rem;
-        width: 100%;
-        height: 100px;
-        text-align: center;
-        justify-content: center;
-        justify-items: center;
-        background-color: rgb(49, 85, 85);
-        align-items: center;
-        /* border: solid red 10px; */
+    #jumpBtn {
+        width: 40%;
+        height: 28px;
+        font-size: 18px;
+        margin: 170px 0 0 28%;
     }
 
 #title {
@@ -272,23 +338,15 @@
         width: 100%;
     } 
 
-    aside {
+    .signup {
         font-size: 1rem;
         /* color: whitesmoke;
         border: solid greenyellow; */
         width: 250px;
         height: auto;
         text-align: start;
-        margin: 0 0 8px 25px;
-    }
-
-    .aside label {
-        width: 100%;
-    }
-
-    label{
-        margin: 0 0 0 8px;
-    }
+        margin: 0 0 18px 25px;
+    }   
 
     .inputs{
         font-size: 1rem;
@@ -299,6 +357,9 @@
         margin: 2px;
         width: 100%;
 
+    }
+    #label,#emailLabel{
+        margin-left: 20px;
     }
     #send {
         border-radius: 4px;
@@ -329,20 +390,20 @@
         margin: 2% 0 5% 5%;
     }
 
-
-    .blogBox{
-        position: relative;
-    }
-
-    .blogEntry {
+.blogEntry {
         display: flexbox;
         height: auto;
         width: 90%;
         border: solid blue 5px;
         border-radius: 3px;
-        margin: 0 5% 5% 2%;
+        margin: 5%   5% 5% 2%;
         z-index: 1;
     }
+    .blogBox{
+        position: relative;
+    }
+
+    
 
     .pContainer{
         text-align: justify;
@@ -351,20 +412,27 @@
 
     .pictures { 
         display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 0px 2% 2% 2%;
         padding: 0 2% 2% 2%;
         overflow:auto;
         border: solid red 5px;
 
     }
-    /* .carousel{
-        height: 2200px;
-    } */
+   .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 24em;
+        min-height: 25em;
+}
 
     .pictures{
         height: 500px;
         width: auto;
-        padding: 5px;
+        padding: 5px 5px 30px 5px;
     }
 
    img{
@@ -372,7 +440,7 @@
         /* max-height: 300px; */
         height: 420px;
         width: auto;
-        padding: 5px;
+        padding: 5px 5px 30px 5px;
         }
 
     video {
@@ -397,13 +465,14 @@
         border: solid red 5px;
     }
 
+
+/* <--Media Queries begin here---> */
+
+
     @media only screen and (max-width: 1250px) {   
          #banner{
-            width: 1200px;
+            width: 100%;
          }
-            h1{
-                color: red;
-            }
             aside{
                 width: 175px;
             }
@@ -454,6 +523,25 @@
 
         }
         
-    
+        @media only screen and (max-width: 410px) {  
+        #banner{
+            margin: 0;
+            /* width: 200px; */
+        }
+         .signup {
+            margin: 40px 0 0 5px;
+            font-size: 10px;
+            width: 40%
+        }
+        #label {
+            width: 50%;
+        }
+      
+     #jumpBtn {
+        width: 60%;
+        font-size: 10px;
+        margin: 60px 0 0 18%;
+        }
+    }
 
 </style>
