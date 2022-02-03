@@ -109,6 +109,7 @@
              </div>
         </div>
         <div class="blogEntry">
+            <img src="../assets/images/airplaneDark.png" class ="plane topPlane" id="topPlane" title="hovering cartoon airplane">
             <div class="blogBox" id="dec2021box">
                 <h3 class="blogPlace" >Hometown Coeur d'Alene</h3>
                 <h4 class="blogDate">Dec15-31,2021</h4>
@@ -149,6 +150,7 @@
              </div>
         </div>
         <div class="blogEntry">
+            <img src="../assets/images/airplaneDark.png" class ="plane topPlane" id="topPlane" title="hovering cartoon airplane">
             <div class="blogBox" id="nov2021box">
                 <img src="../assets/images/airplaneDark.png" class="plane blogPlane" title="cartoon airplane">
                 <h3 class="blogPlace">Sunny San Diego, CA</h3>
@@ -476,6 +478,14 @@
             aside{
                 width: 175px;
             }
+    }
+
+    @media only screen and (max-width: 973px) {  
+        #jumpBtn {
+        width: 45%;
+        font-size: 16px;
+        margin: 160px 0 0 23%;
+        }
     }
 
     @media only screen and (max-width: 500px) {  
